@@ -602,8 +602,8 @@ bool SensorModule::processCommand(const std::string iCmd, bool iDebugKo)
     if (iCmd.length() == 5 && iCmd.substr(4, 1) == "h")
     {
         // Command help
-        openknx.console.writeDiagenoseKo("-> i2c");
-        openknx.console.writeDiagenoseKo("");
+        openknx.console.writeDiagnoseKo("-> i2c");
+        openknx.console.writeDiagnoseKo("");
     }
     else if (iCmd.length() == 7 || iCmd.substr(4, 3) == "i2c")
     {
@@ -611,7 +611,7 @@ bool SensorModule::processCommand(const std::string iCmd, bool iDebugKo)
         logInfoP("%d00 kHz", openknxSensorDevicesModule.getMaxI2cSpeed());
         if (iDebugKo)
         {
-            openknx.console.writeDiagenoseKo("SEN %d00 kHz", openknxSensorDevicesModule.getMaxI2cSpeed());
+            openknx.console.writeDiagnoseKo("SEN %d00 kHz", openknxSensorDevicesModule.getMaxI2cSpeed());
         }
         lResult = true;
     }
@@ -621,7 +621,7 @@ bool SensorModule::processCommand(const std::string iCmd, bool iDebugKo)
         logInfoP("SEN command with bad args");
         if (iDebugKo)
         {
-            openknx.console.writeDiagenoseKo("SEN: bad args");
+            openknx.console.writeDiagnoseKo("SEN: bad args");
         }
         lResult = true;
     }
