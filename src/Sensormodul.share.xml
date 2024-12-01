@@ -253,7 +253,7 @@
                 <Parameter Id="%AID%_UP-%TT%00203" Name="VocSensor" ParameterType="%AID%_PT-VocSensors" Offset="1" BitOffset="4" Text="Voc-Sensor" Value="0" />
                 <Parameter Id="%AID%_UP-%TT%00204" Name="Co2Sensor" ParameterType="%AID%_PT-Co2Sensors" Offset="2" BitOffset="0" Text="Co2-Sensor" Value="0" />
                 <Parameter Id="%AID%_UP-%TT%00205" Name="LuxSensor" ParameterType="%AID%_PT-LuxSensors" Offset="2" BitOffset="4" Text="Helligkeitssensor" Value="0" />
-                <Parameter Id="%AID%_UP-%TT%00206" Name="TofSensor" ParameterType="%AID%_PT-TofSensors" Offset="3" BitOffset="0" Text="Näherungssensor" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%00206" Name="TofSensor" ParameterType="%AID%_PT-TofSensors" Offset="3" BitOffset="0" Text="Füllstands- und Näherungssensor" Value="0" />
               </Union>
 
               <Union SizeInBit="16">

@@ -9,9 +9,9 @@ Die Applikation für das SensorModule erlaubt die Parametrisierung des Sensormod
 
 **Weitere Dokumente zur Applikationsbeschreibung:**
 Die nicht Sensor-spezifischen Teile der Applikation basieren auf anderen OpenKNX-Modulen und sind jeweils dort beschrieben:
-* [OneWireGateway](https://github.com/OpenKNX/OAM-OneWireModule/blob/main/doc/Applikationsbeschreibung-Wire.md) (*nicht in Variante SensorModule-Vpm*)
-* [Präsenz](https://github.com/OpenKNX/OAM-PresenceModule/blob/main/doc/Applikationbeschreibung-Praesenz.md) (*nicht in Variante SensorModule-OneWire*) 
-* [LogikModule](https://github.com/OpenKNX/OAM-LogicModule/blob/main/doc/Applikationsbeschreibung-Logik.md)
+<!-- * [OneWireGateway](https://github.com/OpenKNX/OAM-OneWireModule/blob/main/doc/Applikationsbeschreibung-Wire.md) (*nicht in Variante SensorModule-Vpm*) -->
+* [Präsenz](https://github.com/OpenKNX/OAM-PresenceModule/blob/v1/doc/Applikationbeschreibung-Praesenz.md)
+* [LogikModule](https://github.com/OpenKNX/OAM-LogicModule/blob/v1/doc/Applikationsbeschreibung-Logik.md)
 
 
 ## Inhalte
@@ -51,15 +51,30 @@ Die nicht Sensor-spezifischen Teile der Applikation basieren auf anderen OpenKNX
     * [Luftqualitätsampel ausgeben](#luftqualitätsampel-ausgeben)
     * [Kalibrierungsfortschritt ausgeben](#kalibrierungsfortschritt-ausgeben)
     * [Kalibrierungsdaten löschen](#kalibrierungsdaten-löschen)
-* **+ 1-Wire** (siehe [Dokumentation zum OneWireGateway](https://github.com/OpenKNX/OAM-OneWireModule/blob/main/doc/Applikationsbeschreibung-Wire.md); Achtung: Version beachten!)
-* **+ PM-Kanäle** (siehe [Dokumentation zum PresenceModule](https://github.com/OpenKNX/OAM-PresenceModule/blob/main/doc/Applikationbeschreibung-Praesenz.md); Achtung: Version beachten!)
-* **+ Logikkanäle** (siehe [Dokumentation zum Logikmodul](https://github.com/OpenKNX/OAM-LogicModule/blob/main/doc/Applikationsbeschreibung-Logik.md); Achtung: Version beachten!)
+<!-- * **+ 1-Wire** (siehe [Dokumentation zum OneWireGateway](https://github.com/OpenKNX/OAM-OneWireModule/blob/main/doc/Applikationsbeschreibung-Wire.md); Achtung: Version beachten!) -->
+* **+ PM-Kanäle** (siehe [Dokumentation zum PresenceModule](https://github.com/OpenKNX/OAM-PresenceModule/blob/v1/doc/Applikationbeschreibung-Praesenz.md))
+* **+ Logikkanäle** (siehe [Dokumentation zum Logikmodul](https://github.com/OpenKNX/OAM-LogicModule/blob/v1/doc/Applikationsbeschreibung-Logik.md))
 
 
 
 ## **Änderungshistorie**
 
 Im folgenden werden Änderungen an dem Dokument erfasst, damit man nicht immer das Gesamtdokument lesen muss, um Neuerungen zu erfahren.
+
+01.12.2024: Firmware 3.15, Applikation 3.15
+
+* NEU: Es wird jetzt auch der [REG1-BASE-V1 (und auch der REG1-BASE-V0)](https://github.com/OpenKNX/OpenKNX/wiki/REG1-BASE) von [Ing-Dom](https://muster.ing-dom.de) als Hardware unterstützt. Damit können auch die vom Sensormodul unterstützten I²C-Sensoren an dem herausgeführten I²C-Kanal ausgewertet werden.
+* NEU: Beim AB-Smarthouse Multi Sensor von [AB-SmartHouse](https://www.ab-smarthouse.com) werden jetzt auch die beiden Binäreingänge unterstützt.
+* NEU: Neue Einstellungsseite zum HF-Sensor HLK-LK2420, siehe [Applikatonsbeschreibung Präsenz](https://github.com/OpenKNX/OAM-PresenceModule/blob/v1/doc/Applikationbeschreibung-Praesenz.md)
+* NEU: Der Füllstandssensor VL53L1X (auch als TOF400 bekannt) wir jetzt 2 mal pro Sekunde abgefragt und kann deswegen auch als Näherungssensor oder als Lichtschranke genutzt werden.
+* NEU: Alle Firmware-Varianten haben ein neues Script zum KNX-Firmware-Update bekommen, das einen Upload über den KNX-Bus erlaubt.
+
+* Die enthaltene Logik hat jetzt die Version 3.4
+* Das enthaltene Präsenz-Modul hat jetzt die Version 3.5
+* Der enthaltene Konfigurations-Transfer hat jetzt die Version 0.2
+* Das enthaltene Taster-Modul hat jetzt die Version 0.5
+
+>WICHTIG: Das 1-Wire-Modul ist leider immer noch nicht Re-Implementiert!
 
 15.08.2024: Firmware 3.2.11, Applikation 3.2
 
