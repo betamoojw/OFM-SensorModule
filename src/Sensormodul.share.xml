@@ -109,7 +109,7 @@
                 <TypeRestriction Base="Value" SizeInBit="4">
                   <Enumeration Text="Kein Sensor" Value="0" Id="%ENID%" />
                   <Enumeration Text="SHT3x" Value="1" Id="%ENID%" />
-                  <Enumeration Text="BME280" Value="2" Id="%ENID%" />
+                  <Enumeration Text="BME280 / BMP280" Value="2" Id="%ENID%" />
                   <Enumeration Text="BME680" Value="3" Id="%ENID%" />
                   <Enumeration Text="SCD30 (nicht empfohlen)" Value="4" Id="%ENID%" />
                   <Enumeration Text="SCD40" Value="9" Id="%ENID%" />
@@ -121,7 +121,7 @@
                 <TypeRestriction Base="Value" SizeInBit="4">
                   <Enumeration Text="Kein Sensor" Value="0" Id="%ENID%" />
                   <Enumeration Text="SHT3x" Value="1" Id="%ENID%" />
-                  <Enumeration Text="BME280" Value="2" Id="%ENID%" />
+                  <Enumeration Text="BME280 / BMP280" Value="2" Id="%ENID%" />
                   <Enumeration Text="BME680" Value="3" Id="%ENID%" />
                   <Enumeration Text="SCD30 (nicht empfohlen)" Value="4" Id="%ENID%" />
                   <Enumeration Text="SCD40" Value="9" Id="%ENID%" />
@@ -165,7 +165,7 @@
               <ParameterType Id="%AID%_PT-TofSensors" Name="TofSensors">
                 <TypeRestriction Base="Value" SizeInBit="4" UIHint="DropDown">
                   <Enumeration Text="Kein Sensor" Value="0" Id="%ENID%" />
-                  <Enumeration Text="VL53L1X" Value="7" Id="%ENID%" />
+                  <Enumeration Text="VL53L1X / TOF400" Value="7" Id="%ENID%" />
                 </TypeRestriction>
               </ParameterType>
               <ParameterType Id="%AID%_PT-OffsetHum" Name="OffsetHum">
@@ -379,20 +379,20 @@
                 <ParameterRefRef RefId="%AID%_UP-%TT%00020_R-%TT%0002001" HelpContext="BASE-Verfuegbare-Kanaele" IndentLevel="1" />
                 <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
               </ParameterBlock> -->
-              <ParameterBlock Id="%AID%_PB-nnn" Name="Sensors" Text="Allgemein" ShowInComObjectTree="true" Icon="cog-outline" HelpContext="Empty">
+              <ParameterBlock Id="%AID%_PB-nnn" Name="Sensors" Text="Allgemein" ShowInComObjectTree="true" Icon="cog-outline" HelpContext="SENS-Dokumentation">
                 <ParameterSeparator Id="%AID%_PS-nnn" Text="Sensormodul" UIHint="Headline" />
                 <ParameterSeparator Id="%AID%_PS-nnn" Text="Version: %ModuleVersion%" />
                 <ParameterSeparator Id="%AID%_PS-nnn" Text="" UIHint="HorizontalRuler" />
                 <ParameterSeparator Id="%AID%_PS-nnn" Text="Installierte Hardware" UIHint="Headline" />
                 <ParameterSeparator Id="%AID%_PS-nnn" Text="Im folgenden wird die verwendete bzw. installierte Hardware angegeben." />
                 <ParameterSeparator Id="%AID%_PS-nnn" Text="Die hier getroffenen Angaben beeinflussen das Verhalten der Applikation und der Firmware und müssen zur vorhandenen Hardware passen!" />
-                <ParameterRefRef RefId="%AID%_UP-%TT%00200_R-%TT%0020001" IndentLevel="1" />
-                <ParameterRefRef RefId="%AID%_UP-%TT%00201_R-%TT%0020101" IndentLevel="1" />
-                <ParameterRefRef RefId="%AID%_UP-%TT%00202_R-%TT%0020201" IndentLevel="1" />
-                <ParameterRefRef RefId="%AID%_UP-%TT%00203_R-%TT%0020301" IndentLevel="1" />
-                <ParameterRefRef RefId="%AID%_UP-%TT%00204_R-%TT%0020401" IndentLevel="1" />
-                <ParameterRefRef RefId="%AID%_UP-%TT%00205_R-%TT%0020501" IndentLevel="1" />
-                <ParameterRefRef RefId="%AID%_UP-%TT%00206_R-%TT%0020601" IndentLevel="1" />
+                <ParameterRefRef RefId="%AID%_UP-%TT%00200_R-%TT%0020001" IndentLevel="1" HelpContext="%DOC%" />
+                <ParameterRefRef RefId="%AID%_UP-%TT%00201_R-%TT%0020101" IndentLevel="1" HelpContext="%DOC%" />
+                <ParameterRefRef RefId="%AID%_UP-%TT%00202_R-%TT%0020201" IndentLevel="1" HelpContext="%DOC%" />
+                <ParameterRefRef RefId="%AID%_UP-%TT%00203_R-%TT%0020301" IndentLevel="1" HelpContext="%DOC%" />
+                <ParameterRefRef RefId="%AID%_UP-%TT%00204_R-%TT%0020401" IndentLevel="1" HelpContext="%DOC%" />
+                <ParameterRefRef RefId="%AID%_UP-%TT%00205_R-%TT%0020501" IndentLevel="1" HelpContext="%DOC%" />
+                <ParameterRefRef RefId="%AID%_UP-%TT%00206_R-%TT%0020601" IndentLevel="1" HelpContext="%DOC%" />
 
                 <!-- We dererive some flags for further processing from sensor selections -->
                 <!-- Merker für BME280 wird verwendet -->

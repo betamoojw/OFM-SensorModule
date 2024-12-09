@@ -7,13 +7,6 @@ cSpell:words Glättungsfunktion Glättungsformel Behaglichkeitszone Behaglichkei
 
 Die Applikation für das SensorModule erlaubt die Parametrisierung des Sensormoduls mittels der ETS.
 
-**Weitere Dokumente zur Applikationsbeschreibung:**
-Die nicht Sensor-spezifischen Teile der Applikation basieren auf anderen OpenKNX-Modulen und sind jeweils dort beschrieben:
-<!-- * [OneWireGateway](https://github.com/OpenKNX/OAM-OneWireModule/blob/main/doc/Applikationsbeschreibung-Wire.md) (*nicht in Variante SensorModule-Vpm*) -->
-* [Präsenz](https://github.com/OpenKNX/OAM-PresenceModule/blob/v1/doc/Applikationbeschreibung-Praesenz.md)
-* [LogikModule](https://github.com/OpenKNX/OAM-LogicModule/blob/v1/doc/Applikationsbeschreibung-Logik.md)
-
-
 ## Inhalte
 > Achtung: Nachfolgende Auflistung teilweise abweichend von Reihenfolge im Dokument
 * [Änderungshistorie](#änderungshistorie)
@@ -60,6 +53,14 @@ Die nicht Sensor-spezifischen Teile der Applikation basieren auf anderen OpenKNX
 ## **Änderungshistorie**
 
 Im folgenden werden Änderungen an dem Dokument erfasst, damit man nicht immer das Gesamtdokument lesen muss, um Neuerungen zu erfahren.
+
+07.12.2024: Firmware 4.0.1, Applikation 4.0
+
+* FIX: Fix für das Logikmodul mit Auswirkungen auf das Sensormodul (Das neue Sendeverhalten am Ausgang und der Wiederholungsfilter haben sich leider gegenseitig beeinflusst und zu unerwarteten Ergebnissen geführt, die Logiken kaputt machen konnten. Deswegen ein Hotfix)
+* FIX: Die fehlende Kontexthilfe auf der Seite "Allgemein" wurde ergänzt.
+* NEU: Der Sensor BMP280 (ohne Luftdruck) wird jetzt auch unterstützt.
+
+* Die enthaltene Logik hat jetzt die Version 3.4
 
 01.12.2024: Firmware 3.15, Applikation 3.15
 
@@ -179,8 +180,10 @@ Sie ist auf unterschiedlicher OpenKNX-Hardware lauffähig, beispielweise das Sen
 
 ### **Funktionsumfang**
 
+<!-- DOC HelpContext="Dokumentation" -->
+
 <!-- DOCCONTENT
-Eine vollständige Applikationsbeschreibung ist unter folgendem Link verfügbar: https://github.com/OpenKNX/OFM-PresenceModule/blob/v1/doc/Applikationsbeschreibung-Sensor.md
+Eine vollständige Applikationsbeschreibung ist unter folgendem Link verfügbar: https://github.com/OpenKNX/OFM-SensorModule/blob/v1/doc/Applikationsbeschreibung-Sensor.md
 
 Weitere Produktinformationen sind in unserem Wiki verfügbar: https://github.com/OpenKNX/OpenKNX/wiki/Produktinfo-Sensormodul
 DOCCONTENT -->
@@ -297,7 +300,7 @@ Die unterstützten Sensoren liefern folgende Messwerte:
 Sensorauswahl | Temperatur | Luftfeuchte | Luftdruck | VOC | CO<sub>2</sub> | Helligkeit | Entfernung
 ---|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 SHT3x   | X | X |   |   |   |
-BME280  | X | X | X |   |   |
+BMP280  | X | X |   |   |   |
 BME680  | X | X | X | X | X<sup>2)</sup>
 SCD30<sup>4)</sup>   | X | X |   |   | X |
 SCD4x<sup>3)</sup>   | X | X |   |   | X |
@@ -348,6 +351,7 @@ Die in den Tabellen angegebenen Kombinationen sagen nichts darüber aus, ob die 
 
 <kbd>![Installierte Hardware](pics/InstallierteHardware.png)</kbd>
 
+<!-- DOC -->
 #### **Temperatursensor**
 
 Dieses Auswahlfeld erlaubt die Auswahl des Sensors, der die Temperatur liefern soll. Ein entsprechendes Kommunikationsobjekt (KO) zum lesen bzw. senden erscheint in der Liste der Kommunikationsobjekte.
@@ -356,6 +360,7 @@ Wird "Kein Sensor" ausgewählt, wird die Temperatur nicht ermittelt.
 
 Nur wenn ein Sensor für die Ermittlung der Temperatur ausgewählt wurde, erscheint eine Seite "Temperatur", auf der passende Einstellungen zum Messwert gemacht werden können.
 
+<!-- DOC -->
 #### **Luftfeuchtesensor**
 
 Dieses Auswahlfeld erlaubt die Auswahl des Sensors, der die Luftfeuchte liefern soll. Ein entsprechendes Kommunikationsobjekt (KO) zum lesen bzw. senden erscheint in der Liste der Kommunikationsobjekte.
@@ -364,6 +369,7 @@ Wird "Kein Sensor" ausgewählt, wird die Luftfeuchte nicht ermittelt.
 
 Nur wenn ein Sensor für die Ermittlung der Luftfeuchte ausgewählt wurde, erscheint eine Seite "Luftfeuchte", auf der passende Einstellungen zum Messwert gemacht werden können.
 
+<!-- DOC -->
 #### **Luftdrucksensor**
 
 Dieses Auswahlfeld erlaubt die Auswahl des Sensors, der den Luftdruck liefern soll. Ein entsprechendes Kommunikationsobjekt (KO) zum lesen bzw. senden erscheint in der Liste der Kommunikationsobjekte.
@@ -372,6 +378,7 @@ Wird "Kein Sensor" ausgewählt, wird der Luftdruck nicht ermittelt.
 
 Nur wenn ein Sensor für die Ermittlung des Luftdrucks ausgewählt wurde, erscheint eine Seite "Luftdruck", auf der passende Einstellungen zum Messwert gemacht werden können.
 
+<!-- DOC -->
 #### **Voc-Sensor**
 
 Dieses Auswahlfeld erlaubt die Auswahl des Sensors, der den Messwert für flüchtige organischen Verbindungen (engl. volatile organic compounds, kurz Voc) liefern soll. Ein entsprechendes Kommunikationsobjekt (KO) zum lesen bzw. senden erscheint in der Liste der Kommunikationsobjekte.
@@ -380,6 +387,7 @@ Wird "Kein Sensor" ausgewählt, wird der Voc-Wert nicht ermittelt.
 
 Nur wenn ein Sensor für die VOC-Ermittlung ausgewählt wurde, erscheint eine Seite "VOC", auf der passende Einstellungen zum Messwert gemacht werden können.
 
+<!-- DOC -->
 #### **Co2-Sensor**
 
 Dieses Auswahlfeld erlaubt die Auswahl des Sensors, der den Messwert für Kohlendioxid (CO<sub>2</sub>) liefern soll. Ein entsprechendes Kommunikationsobjekt (KO) zum lesen bzw. senden erscheint in der Liste der Kommunikationsobjekte.
@@ -390,6 +398,7 @@ Nur wenn ein Sensor für die CO<sub>2</sub>-Ermittlung ausgewählt wurde, ersche
 
 Bei der Auswahl vom BME680, IAQCore oder SGP30 ist anzumerken, dass diese Sensoren nur ein berechnetes CO<sub>2</sub>-Äquivalent passend zum gemessenen Voc-Wert ausgeben und keinen gemessenen CO<sub>2</sub>-Wert.
 
+<!-- DOC -->
 #### **Helligkeitssensor**
 
 Dieses Auswahlfeld erlaubt die Auswahl des Sensors, der die Helligkeit liefern soll. Ein entsprechendes Kommunikationsobjekt (KO) zum lesen bzw. senden erscheint in der Liste der Kommunikationsobjekte.
@@ -398,7 +407,8 @@ Wird "Kein Sensor" ausgewählt, wird die Helligkeit nicht ermittelt.
 
 Nur wenn ein Sensor für die Ermittlung der Helligkeit ausgewählt wurde, erscheint eine Seite "Helligkeit", auf der passende Einstellungen zum Messwert gemacht werden können.
 
-#### **Entfernungssensor**
+<!-- DOC -->
+#### **Füllstands- und Näherungssensor**
 
 Dieses Auswahlfeld erlaubt die Auswahl des Sensors, der die Entfernung liefern soll. Ein entsprechendes Kommunikationsobjekt (KO) zum lesen bzw. senden erscheint in der Liste der Kommunikationsobjekte.
 
