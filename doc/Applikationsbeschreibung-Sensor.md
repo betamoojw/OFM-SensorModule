@@ -54,13 +54,16 @@ Die Applikation für das SensorModule erlaubt die Parametrisierung des Sensormod
 
 Im folgenden werden Änderungen an dem Dokument erfasst, damit man nicht immer das Gesamtdokument lesen muss, um Neuerungen zu erfahren.
 
-07.12.2024: Firmware 4.0.1, Applikation 4.0
+07.12.2024: Firmware 4.0.2, Applikation 4.0
 
 * FIX: Fix für das Logikmodul mit Auswirkungen auf das Sensormodul (Das neue Sendeverhalten am Ausgang und der Wiederholungsfilter haben sich leider gegenseitig beeinflusst und zu unerwarteten Ergebnissen geführt, die Logiken kaputt machen konnten. Deswegen ein Hotfix)
 * FIX: Die fehlende Kontexthilfe auf der Seite "Allgemein" wurde ergänzt.
 * NEU: Der Sensor BMP280 (ohne Luftdruck) wird jetzt auch unterstützt.
+* NEU: Firmware-Update über den KNX-Bus lastet den Bus weniger aus (weniger Telegrammwiederholungen)
+* NEU: Die Erzeugung der ETS-Produktdatenbank (knxprod) funktioniert jetzt auch mit der ETS 6.3
 
-* Die enthaltene Logik hat jetzt die Version 3.4
+* Die enthaltene Logik hat jetzt die Version 3.5
+* Das enthaltene Präsenzmodul hat jetzt die Version 3.6
 
 01.12.2024: Firmware 3.15, Applikation 3.15
 
