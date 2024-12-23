@@ -54,6 +54,10 @@ Die Applikation für das SensorModule erlaubt die Parametrisierung des Sensormod
 
 Im folgenden werden Änderungen an dem Dokument erfasst, damit man nicht immer das Gesamtdokument lesen muss, um Neuerungen zu erfahren.
 
+12.12.2024: Firmware 4.1.2, Applikation 4.1
+
+* FIX: Externe Werte, für gewichtete Auswertung: Hier war nur 1 Wert möglich, wenn man 2 Werte ausgewählt hat, wurde fälschlicherweise ein KO deaktiviert.
+
 07.12.2024: Firmware 4.0.2, Applikation 4.0
 
 * FIX: Fix für das Logikmodul mit Auswirkungen auf das Sensormodul (Das neue Sendeverhalten am Ausgang und der Wiederholungsfilter haben sich leider gegenseitig beeinflusst und zu unerwarteten Ergebnissen geführt, die Logiken kaputt machen konnten. Deswegen ein Hotfix)
