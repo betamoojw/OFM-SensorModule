@@ -54,6 +54,16 @@ Die Applikation für das SensorModule erlaubt die Parametrisierung des Sensormod
 
 Im folgenden werden Änderungen an dem Dokument erfasst, damit man nicht immer das Gesamtdokument lesen muss, um Neuerungen zu erfahren.
 
+13.01.2025: Firmware 4.0.6, Applikation 4.0
+
+* FIX: Durch einen Konfigurationsfehler beim erstellen der Firmware war das Präsenzmodul (VPM) auf folgenden Geräten nicht verfügbar:
+  * REG1-Base-V1
+  * REG1-Base-V0
+  * PiPico-Connector
+
+* Die enthaltene Logik hat jetzt die Version 3.5.3
+* Das enthaltene Präsenzmodul hat jetzt die Version 3.6.3
+
 07.12.2024: Firmware 4.0.2, Applikation 4.0
 
 * FIX: Fix für das Logikmodul mit Auswirkungen auf das Sensormodul (Das neue Sendeverhalten am Ausgang und der Wiederholungsfilter haben sich leider gegenseitig beeinflusst und zu unerwarteten Ergebnissen geführt, die Logiken kaputt machen konnten. Deswegen ein Hotfix)
