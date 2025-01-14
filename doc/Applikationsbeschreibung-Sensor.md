@@ -54,15 +54,20 @@ Die Applikation für das SensorModule erlaubt die Parametrisierung des Sensormod
 
 Im folgenden werden Änderungen an dem Dokument erfasst, damit man nicht immer das Gesamtdokument lesen muss, um Neuerungen zu erfahren.
 
-13.01.2025: Firmware 4.0.6, Applikation 4.0
+13.01.2025: Firmware 4.1.6, Applikation 4.1
 
 * FIX: Durch einen Konfigurationsfehler beim erstellen der Firmware war das Präsenzmodul (VPM) auf folgenden Geräten nicht verfügbar:
   * REG1-Base-V1
   * REG1-Base-V0
   * PiPico-Connector
+* NEU: Die Firmware ist jetzt auch für den UP1-PM-HF (UP1-Präsenzmelder-Plus) verfügbar
 
 * Die enthaltene Logik hat jetzt die Version 3.5.3
 * Das enthaltene Präsenzmodul hat jetzt die Version 3.6.3
+
+12.12.2024: Firmware 4.1.2, Applikation 4.1
+
+* FIX: Externe Werte, für gewichtete Auswertung: Hier war nur 1 Wert möglich, wenn man 2 Werte ausgewählt hat, wurde fälschlicherweise ein KO deaktiviert.
 
 07.12.2024: Firmware 4.0.2, Applikation 4.0
 
